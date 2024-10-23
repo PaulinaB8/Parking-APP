@@ -1,0 +1,10 @@
+<header>
+    <h1 >PARKING APP</h1>
+    @if(esAdmin){
+        <a [routerLink]="['/reportes']" routerLinkActive="active">Reportes</a>
+        <a [routerLink]="['/precios']" routerLinkActive="active">Precios</a>
+    }
+    <a [routerLink]="['/estado-cocheras']" routerLinkActive="active">Estado cocheras</a>
+    <a [routerLink]="['/login']" (click)="logOut()"><img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Logout"></a>
+</header>
+<!-- routerLinkActive me conecta con SCSS y hace que cuando yo estoy en la página lo pone azul -->

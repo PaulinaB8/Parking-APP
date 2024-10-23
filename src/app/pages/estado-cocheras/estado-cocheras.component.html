@@ -1,0 +1,65 @@
+<app-header></app-header>
+<main>
+    
+    <div id="table">
+        <div id="thead">
+            <div id="num" class = "titulo">N°</div>
+            <div id="disponibilidad" class = "titulo">Disponibilidad</div>
+            <div class = "titulo" id="descripcion">Ingreso</div>
+            <div class = "titulo">Acciones</div>
+        </div>
+        @for (fila of filas; track $index) {
+            <div id="fila">
+                <div class="contenido">{{ $index +1 }}</div>
+                @if (fila.activo) {
+                    <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente)">{{ fila.activo.patente }}</button>
+                } @else if (fila.deshabilitada) {
+                    <button type="button" class="contenido"><span class="ocupado">No disponible</span></button>
+                } @else {
+                    <div class="contenido" (click)="modalOcuparCochera(fila.id)"><span class="disponible">Disponible</span></div>
+                }
+                <div class="contenido">{{ fila.activo?.horaIngreso }}</div>
+            
+                <div class="boton" class="contenido">
+                    @if (!fila.activo){
+                        <button (click)="showModal(fila.id)"><img src="https://th.bing.com/th/id/R.52bc1a3bc0bea249372da61f5d40320e?rik=4RvGrXKPClcQ1A&pid=ImgRaw&r=0" alt="Borrar"></button>
+                    <button (click)="cambiarDisponibilidadCochera(fila.id, fila.deshabilitada)"><img *ngIf="!fila.deshabilitada" src="https://th.bing.com/th/id/R.5ba429349ad0f3f6c3d02f1400fd282c?rik=LxWVcMtrlld0bw&pid=ImgRaw&r=0"  alt="Disponible">
+                        <img *ngIf="fila.deshabilitada" src="https://cdn-icons-png.flaticon.com/512/157/157977.png" alt="Ocupado">
+                      </button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+        <button id="boton-agregar" (click)="agregarFila()">+</button>
+</main>
+
+
+
+
+
+
+
+
+
+
+<!-- @for (fila of filas; track $index){
+    <div id="tbody">
+            <div class="contenido">{{$index + 1}}</div>
+            @if (fila.activo){
+                <div>{{ fila.activo.patente}}</div>
+            }@else if (fila.deshabilitada){
+                <div><span class="ocupado">No disponible</span></div>
+            } @else {
+                <div><span class="disponible">Disponible</span></div>
+            }
+            <div class="contenido"><p [ngClass]="{disponible:!fila.deshabilitada, ocupado:fila.deshabilitada}">{{fila.deshabilitada ?"Deshabilitada " :"Disponible "}}</p></div>
+            <div class="contenido" id="descripcion">{{fila.descripcion}}</div>
+            <div class="boton" class="contenido">
+                <button (click)="showModal(fila.id)"><img src="https://th.bing.com/th/id/R.52bc1a3bc0bea249372da61f5d40320e?rik=4RvGrXKPClcQ1A&pid=ImgRaw&r=0" alt="Borrar"></button>
+                <button (click)="cambiarDisponibilidadCochera(fila.id, fila.deshabilitada)"><img *ngIf="!fila.deshabilitada" src="https://cdn-icons-png.flaticon.com/512/157/157977.png"  alt="Disponible">
+                    <img *ngIf="fila.deshabilitada" src="https://th.bing.com/th/id/R.5ba429349ad0f3f6c3d02f1400fd282c?rik=LxWVcMtrlld0bw&pid=ImgRaw&r=0" alt="Ocupado">
+                  </button>
+        </div>
+    </div>
+} -->

@@ -1,0 +1,113 @@
+@use "./../../../../public/styles/colores.scss";
+
+main{
+    background-color: colores.$color-fondo;
+    align-items: center;
+    #table{
+        margin-top: 50px;
+        margin-left: 150px;
+        // border-collapse: separate;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 1000px;
+        #thead{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom:  colores.$color-boton-secundario 3px solid;
+        }
+            .titulo{
+                // padding-right: 50px;
+                // padding-bottom: 30px;
+            }
+            #num{
+                padding-right: 20px;
+            }
+        
+            #fila{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                padding-top: 10px;
+                padding-bottom:10px;
+                padding-left: 10px;
+                font-size: 20px;
+                color:colores.$color-texto;   
+                border-bottom: colores.$color-borde-inferior;
+            }
+            .contenido{
+                display: flex;
+                text-align: center;
+                padding-top: 5px;
+                align-items: center;
+                padding-bottom: 5px;
+            }
+            .boton{
+                padding: 10px;
+                img{
+                    width:30px;
+                    cursor:pointer
+                }
+            }
+            img{
+                width: 30px;
+                cursor: pointer;
+            }
+            #descripcion{
+                width: 150px;
+                text-align: center;
+            }
+
+    }
+    .disponible{
+        background-color: colores.$color-correcto;
+        border-radius: 20px;
+        text-align: center;
+        color:white;
+        margin-top: 30px;
+        padding:10px;
+        padding-left: 32px;
+        padding-right: 32px;
+        font-size: 20px;
+        align-items: center;
+        
+    }
+    .ocupado{
+            background-color: colores.$color-boton-secundario;
+            border-radius: 20px;
+            text-align: center;
+            color:white;
+            padding:10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 20px;
+            margin:0px;
+    }
+    
+    };
+    #boton-agregar{
+    padding:10px;
+    background-color: colores.$color-principal;
+    border-radius: 15px;
+    color:white;
+    margin-top: 40px;
+    cursor:pointer;
+    margin-left: 650px;
+    font-size: 25px;
+}
+    #boton-get{
+    cursor:pointer;
+    padding: 10px;
+    background-color: colores.$color-principal;
+    color: white;
+    border-radius: 10px;
+    margin-left: 600px;
+}
+    .patente{
+        font-size: 20px;
+        text-align: center;
+    }

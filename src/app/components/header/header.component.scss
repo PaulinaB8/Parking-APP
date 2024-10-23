@@ -1,0 +1,27 @@
+@use "./../../../../public/styles/colores.scss";
+header{
+    border-bottom: rgb(11, 11, 105) 10px solid;
+    height: 100px;
+    display:flex;
+    justify-content: space-between;
+    h1{
+        color: colores.$color-principal;
+        font-size: 55px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 30px;
+
+    }
+    .active{
+        color: blue;
+    }
+    img{
+        width: 80px;
+        padding-right:10px;
+    }
+
+}

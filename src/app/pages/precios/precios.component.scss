@@ -1,0 +1,66 @@
+@use "./../../../../public/styles/colores.scss";
+#table{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 80px;
+    width: 700px;
+    background-color: colores.$color-principal;
+    border-radius: 50px;
+    color:colores.$color-texto-invertido;
+    margin-left: 350px;
+    margin-top: 130px;
+}
+
+#titulo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 50px;
+    margin-left:0px
+}
+
+.titulos{
+ font-size: 30px;
+ margin-top: 0px;
+}
+
+#tiempo{
+    padding-left: 60px;
+    padding-right: 40px;
+}
+
+#costo{
+    padding-left: 50px;
+    padding-right: 40px;
+}
+
+#acciones{
+    padding-right:60px;
+}
+
+.contenido-tabla{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 10px;
+    font-size: 20px;
+    color:colores.$color-texto;   
+    border-bottom: colores.$color-borde-inferior-precios;
+}
+
+.contenido{
+    display: flex;
+    justify-content: space-between;
+    color: colores.$color-texto-invertido;
+    text-align: center;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+img{
+    width: 35px;
+}
