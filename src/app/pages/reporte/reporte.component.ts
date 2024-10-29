@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
@@ -10,5 +10,8 @@ import { HeaderComponent } from '../../components/header/header.component';
   styleUrl: './reporte.component.scss'
 })
 export class ReporteComponent {
+  router = inject(Router);
+
+
 
 }

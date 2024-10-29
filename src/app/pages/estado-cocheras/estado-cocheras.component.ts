@@ -24,6 +24,9 @@ export class EstadoCocherasComponent{
 
   cocheras = inject(CocherasServiceService)
   estacionamientos = inject(EstacionamientosService)
+  auth= inject (AuthService);
+  cochera = inject(CocherasServiceService);
+  router = inject(Router);
 
   ngOnInit(){
     this.getCocheras();
@@ -44,20 +47,6 @@ export class EstadoCocherasComponent{
     });
 
   };
-
-      // mostrarFilas(valor: Cochera ){
-      //      let num : number = valor.id;   
-      //      this.filas.push({
-      //        id: num + 1,  // Usamos el valor pasado como argumento
-      //        descripcion: valor.descripcion,
-      //        deshabilitada: valor.deshabilitada,  // Hora actual
-      //        eliminada: valor.eliminada  // Valor predeterminado para eliminada
-      //      });}
-
-        // id: ,
-        // descripcion: string,
-        // deshabilitada: new Date().toLocaleTimeString(),
-        // eliminada: "-"
   
   showModal(indice: number){Swal.fire({
     title: "¿Estás seguro?",
@@ -103,14 +92,11 @@ export class EstadoCocherasComponent{
  }
       // this.filas[numeroFila].deshabilitada =!this.filas[numeroFila].deshabilitada;
 
- auth= inject (AuthService);
 
-  router = inject(Router);
   datosEstadoCocheras = {
     descripcion: "Agregada por api",
   }
 
-  cochera = inject(CocherasServiceService);
 
   agregarFila(){
     this.cochera.agregarFila(this.datosEstadoCocheras)
@@ -121,7 +107,7 @@ export class EstadoCocherasComponent{
       })
     }
 
-    patenteNueva: string = "";
+    // patenteNueva: string = "";
     
    abrirModalNuevoEstacionamiento(id:number){
       Swal.fire({
@@ -146,7 +132,7 @@ export class EstadoCocherasComponent{
   
     precios = inject(PreciosService);
 
-    desocuparCochera(valor: string){
+    desocuparCochera(valor: string, cocheraId:number){
       Swal.fire({
         title: "Estás seguro de cerrar la cochera?",
         icon: "warning",
@@ -156,10 +142,12 @@ export class EstadoCocherasComponent{
         confirmButtonText: "Cerrar cochera"
       }).then(res => {
         if(res.isConfirmed){
-          this.estacionamientos.desocuparCochera(valor).then(() =>{
+          this.estacionamientos.desocuparCochera(valor).then(() =>{ 
+          let precio = this.estacionamientos.getCosto(cocheraId)
+        }).then((precio) =>{
         Swal.fire({
           title: "Cochera cerrada",
-          text: "Total a cobrar = ",
+          text: `Total a cobrar = ${precio}`,
           icon: "success"
         }).then(()=>{
         this.ngOnInit();

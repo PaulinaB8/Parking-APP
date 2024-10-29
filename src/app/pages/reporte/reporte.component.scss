@@ -1,0 +1,62 @@
+@use "./../../../../public/styles/colores.scss";
+
+main{
+    background-color: colores.$color-fondo;
+    align-items: center;
+    #table{
+        margin-top: 50px;
+        margin-left: 150px;
+        // border-collapse: separate;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 1000px;
+        #thead{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom:  colores.$color-boton-secundario 3px solid;
+        }
+            #num{
+                padding-right: 20px;
+            }
+        
+            #fila{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                padding-top: 10px;
+                padding-bottom:10px;
+                padding-left: 10px;
+                font-size: 20px;
+                color:colores.$color-texto;   
+                border-bottom: colores.$color-borde-inferior;
+            }
+            .contenido{
+                display: flex;
+                text-align: center;
+                padding-top: 5px;
+                align-items: center;
+                padding-bottom: 5px;
+            }
+            .boton{
+                padding: 10px;
+                img{
+                    width:30px;
+                    cursor:pointer
+                }
+            }
+            img{
+                width: 30px;
+                cursor: pointer;
+            }
+            #descripcion{
+                width: 150px;
+                text-align: center;
+            }
+        }
+    }
+    

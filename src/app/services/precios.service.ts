@@ -39,7 +39,10 @@ export class PreciosService {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${this.auth.getToken()}`, // reemplaza con el token adecuado
           },
-          body: JSON.stringify({ valor: nuevaTarifa }),
+          body: JSON.stringify({ 
+            valor: nuevaTarifa,
+            idUsuarioEgreso : "admin"
+            }),
       })
       .then(res => res.ok)
       .catch(() => false);

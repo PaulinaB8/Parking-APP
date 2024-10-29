@@ -59,4 +59,19 @@ export class EstacionamientosService {
       }),
   }).then(r=>r.json());
 }
+
+
+  getCosto(cocheraId:number): Promise<number | null>{
+      return this.estacionamientos().then(estacionamientos => {
+        let precio = null;
+      for (let estacionamiento of estacionamientos) {
+        if (estacionamiento.idCochera === cocheraId &&
+            estacionamiento.horaEgreso === null) {
+              console.log(estacionamiento.costo)
+            return precio = estacionamiento.costo;
+        }
+      }
+      return precio = 0
+    });
+  }
 }

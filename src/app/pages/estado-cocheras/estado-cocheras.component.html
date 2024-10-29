@@ -12,7 +12,7 @@
             <button id="fila" (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada||fila.activo">
                 <div class="contenido">{{ $index +1 }}</div>
                 @if (fila.activo) {
-                    <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente)">{{ fila.activo.patente }}</button>
+                    <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente, fila.id)">{{ fila.activo.patente }}</button>
                 } @else if (fila.deshabilitada) {
                     <button type="button" class="contenido"><span class="ocupado">No disponible</span></button>
                 } @else {

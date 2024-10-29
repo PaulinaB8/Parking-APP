@@ -1,0 +1,6 @@
+export interface Reporte {
+    numero : number,
+    mes: Date,
+    usos: number,
+    cobrado: number,
+}
