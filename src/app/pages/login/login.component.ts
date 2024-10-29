@@ -25,10 +25,10 @@ export class LoginComponent {
   login(){
     // inicia sesion 
     this.auth.login(this.datosLogin)
-    .then(ok=>{
-        if (ok){
+    .then(res=>{
+        if (res){
           this.router.navigate(['/estado-cocheras']);
-        }else{
+      }else{
           Swal.fire({
             icon: "error",
             title: "Error",

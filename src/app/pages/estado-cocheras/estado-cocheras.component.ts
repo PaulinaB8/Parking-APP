@@ -97,9 +97,9 @@ export class EstadoCocherasComponent{
   //   /**cambia la disponibilidad de una cochera, si está disponible la deshabilita y viceversa */
     const cochera = this.filas.find(cochera => cochera.id === cocheraId)!;
    if(cochera.deshabilitada)
-     this.cochera.habilitarCochera(cochera).then(() => this.ngOnInit());
+     this.cochera.habilitarCochera(cochera).then(() => this.getCocheras());
    else
-     this.cochera.deshabilitarCochera(cochera).then(() => this.ngOnInit());;
+     this.cochera.deshabilitarCochera(cochera).then(() => this.getCocheras());;
  }
       // this.filas[numeroFila].deshabilitada =!this.filas[numeroFila].deshabilitada;
 
@@ -123,38 +123,28 @@ export class EstadoCocherasComponent{
 
     patenteNueva: string = "";
     
-   modalOcuparCochera(id:number) {
+   abrirModalNuevoEstacionamiento(id:number){
       Swal.fire({
         title: 'Ingrese el número de patente',
         input: 'text',
-        customClass: {
-          validationMessage: 'my-validation-message',
-        },
-        preConfirm: (value) => {
-          if (!value) {
-            Swal.showValidationMessage('<i class="fa fa-info-circle"></i> Se requiere la patente');
+        showCancelButton : true,
+        inputValidator(value) {
+          if(!value){
+            return "Ingrese una patente válida";
           }
-        },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Guarda el valor del input en una variable
-          let valorIngresado = result.value;
-          console.log('Número de patente ingresado:', valorIngresado);
-
-          this.ocuparCochera(valorIngresado, id);
+          return 
         }
-      });
-    }
+      }).then(res => {
+        if(res.isConfirmed){
+          this.estacionamientos.estacionarAuto(res.value,id).then(() =>{
+      this.getCocheras();
+    })
+  }
+  })
+  }
     
-    ocuparCochera(valor: string, cocheraId:number){
-      let ocupar ={
-        patente: valor,
-        idCochera: cocheraId
-      }
-      this.estacionamientos.ocuparCochera(ocupar)
-    }
   
-    precios = inject(PreciosComponent);
+    precios = inject(PreciosService);
 
     desocuparCochera(valor: string){
       Swal.fire({
@@ -164,44 +154,24 @@ export class EstadoCocherasComponent{
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Cerrar cochera"
-      }).then((result) => {
-        console.log(result)
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Cochera cerrada",
-            text: "Total a cobrar = ",
-            icon: "success"
-          });
-        }
+      }).then(res => {
+        if(res.isConfirmed){
+          this.estacionamientos.desocuparCochera(valor).then(() =>{
+        Swal.fire({
+          title: "Cochera cerrada",
+          text: "Total a cobrar = ",
+          icon: "success"
+        }).then(()=>{
+        this.ngOnInit();
       });
-      let desocupar = {
-        patente : valor,
-        idUsuarioEgreso : "ADMIN"
-      }
-      this.estacionamientos.desocuparCochera(desocupar)
-      .then(()=>{
-        this.ngOnInit()})
+    }).catch(error => {
+      console.log("Error al desocupar la cochera:", error);
+    });
+  }
+})
     }
-  
-  
   
   }
 
-
-    // return fetch("http://localhost:4000/cocheras/",{
-    //   method: "POST",
-    //   headers:{
-    //     'Content-Type': "application/json",
-    //     'Authorization' : `Bearer ${this.auth.getToken()}`,
-    //   },
-    //   body: JSON.stringify(this.datosEstadoCocheras),
-    // })
-
-
-
-// filas:{
-//   nro: number,
-//   disponibilidad: boolean,
-//   ingreso: string,
-//   acciones:boolean,
-// } [] = [];
+          
+  

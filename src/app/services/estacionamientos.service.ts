@@ -31,25 +31,32 @@ export class EstacionamientosService {
     });
   }
 
-  ocuparCochera(cocheraAOcupar: {patente :string, idCochera : number }){
-    return fetch('https://localhost:4000/estacionamientos/abrir',{
+  estacionarAuto(patenteAuto :string, idCochera : number){
+    return fetch('http://localhost:4000/estacionamientos/abrir',{
       method:"POST",
       headers:{
         "Content-Type" : "application/json",
         Authorization: "Bearer " + (this.auth.getToken() ?? ''),
       },
-      body: JSON.stringify(cocheraAOcupar),
+      body: JSON.stringify({
+        patente: patenteAuto,
+        idCochera: idCochera,
+        idUsuarioIngreso: "admin"
+      }),
     }).then(r => r.json());
   }
 
-  desocuparCochera(cocheraADesocupar:{patente:string, idUsuarioEgreso: string}){
-    return fetch('https://localhost:4000/estacionamientos/cerrar',{
+  desocuparCochera(patente:string){
+    return fetch('http://localhost:4000/estacionamientos/cerrar',{
       method:"PATCH",
       headers:{
         "Content-Type" : "application/json",
         Authorization: "Bearer " + (this.auth.getToken() ?? ''),
       },
-      body: JSON.stringify(cocheraADesocupar),
+      body: JSON.stringify({
+        patente: patente,
+        idUsuarioEgreso : "admin"
+      }),
   }).then(r=>r.json());
 }
 }

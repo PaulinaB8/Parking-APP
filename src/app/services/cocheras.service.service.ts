@@ -37,7 +37,7 @@ deshabilitarCochera(cochera: Cochera){
       'Content-Type': "application/json",
       'Authorization' : `Bearer ${this.auth.getToken()}`,
     },
-    // body: JSON.stringify(numeroFila),
+      // body: JSON.stringify(cochera.id),
   })
 }
 
@@ -48,6 +48,7 @@ habilitarCochera(cochera:Cochera){
       'Content-Type': "application/json",
       'Authorization' : `Bearer ${this.auth.getToken()}`,
     },
+    //  body: JSON.stringify(cochera.id),
   })
 }
 
