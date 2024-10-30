@@ -19,15 +19,11 @@ main{
             flex-direction: row;
             border-bottom:  colores.$color-boton-secundario 3px solid;
         }
-            .titulo{
-                // padding-right: 50px;
-                // padding-bottom: 30px;
-            }
             #num{
                 padding-right: 20px;
             }
         
-            #fila{
+            .fila{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -74,6 +70,8 @@ main{
         padding-right: 32px;
         font-size: 20px;
         align-items: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
         
     }
     .ocupado{
@@ -110,4 +108,7 @@ main{
     .patente{
         font-size: 20px;
         text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 50px;
     }

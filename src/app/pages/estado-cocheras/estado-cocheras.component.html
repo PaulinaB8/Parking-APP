@@ -9,7 +9,7 @@
             <div class = "titulo">Acciones</div>
         </div>
         @for (fila of filas; track $index) {
-            <button id="fila" (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada||fila.activo">
+            <button class = "fila" (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada||fila.activo">
                 <div class="contenido">{{ $index +1 }}</div>
                 @if (fila.activo) {
                     <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente, fila.id)">{{ fila.activo.patente }}</button>

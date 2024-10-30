@@ -8,4 +8,11 @@
             <div class = "titulo" id="usos">Usos</div>
             <div class = "titulo">Cobrado</div>
         </div>
-        
+        @for (reporte of reportes; track $index){
+            <div class="contenido-tabla">
+                <div class="contenido">{{$index}}</div>
+                <div class="contenido">{{reporte.periodo}}</div>
+                <div class="contenido">{{reporte.usos}}</div>
+                <div class="contenido">{{reporte.cobrado}}</div>
+            </div>
+        }

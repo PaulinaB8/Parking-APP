@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Estacionamiento } from '../interfaces/estacionamiento';
+import {  UsoMes } from '../interfaces/reporte';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Estacionamiento } from '../interfaces/estacionamiento';
 export class EstacionamientosService {
 
   auth = inject (AuthService);
+  
 
   estacionamientos(): Promise<Estacionamiento[]> {
     return fetch('http://localhost:4000/estacionamientos', {
@@ -63,15 +65,45 @@ export class EstacionamientosService {
 
   getCosto(cocheraId:number): Promise<number | null>{
       return this.estacionamientos().then(estacionamientos => {
-        let precio = null;
+        let precio = 0;
       for (let estacionamiento of estacionamientos) {
         if (estacionamiento.idCochera === cocheraId &&
             estacionamiento.horaEgreso === null) {
               console.log(estacionamiento.costo)
-            return precio = estacionamiento.costo;
+            return estacionamiento.costo;
         }
       }
-      return precio = 0
+      return precio
     });
   }
+
+
+
+
+  getUsoMensual(){
+    return this.estacionamientos().then(estacionamientos => {
+      let historial: UsoMes[] = []
+        for (let estacionamiento of estacionamientos) {
+
+          if (estacionamiento.horaEgreso !== null){
+            let mes = new Date(estacionamiento.horaEgreso);
+            let fecha = mes.toLocaleDateString("es-Cl", {
+            month: "numeric",
+            year: "numeric",
+          })
+          const indiceEncontrado = historial.findIndex((buscado) => buscado.periodo === fecha);
+          if(indiceEncontrado === -1){
+            historial.push({periodo:fecha, usos: 1, cobrado:estacionamiento.costo})
+          } else {
+            historial[indiceEncontrado].usos++;
+            historial[indiceEncontrado].cobrado+= estacionamiento.costo;
+          }
+          
+          
+        }
+      }
+      return historial
+      }
+      )}
+
 }

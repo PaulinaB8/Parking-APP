@@ -143,14 +143,13 @@ export class EstadoCocherasComponent{
       }).then(res => {
         if(res.isConfirmed){
           this.estacionamientos.desocuparCochera(valor).then(() =>{ 
-          let precio = this.estacionamientos.getCosto(cocheraId)
+            this.ngOnInit();
+            let precio = this.estacionamientos.getCosto(cocheraId)
         }).then((precio) =>{
         Swal.fire({
           title: "Cochera cerrada",
           text: `Total a cobrar = ${precio}`,
           icon: "success"
-        }).then(()=>{
-        this.ngOnInit();
       });
     }).catch(error => {
       console.log("Error al desocupar la cochera:", error);
