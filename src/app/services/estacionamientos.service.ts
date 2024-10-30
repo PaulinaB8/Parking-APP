@@ -59,7 +59,7 @@ export class EstacionamientosService {
         patente: patente,
         idUsuarioEgreso : "admin"
       }),
-  }).then(r=>r.json());
+  })//.then(r=>r.json());
 }
 
 

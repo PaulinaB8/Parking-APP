@@ -77,7 +77,7 @@ export class EstadoCocherasComponent{
    })
    .then(data => {
        console.log(data); 
-       this.ngOnInit();
+       this.getCocheras();
    })
    }
   
@@ -101,7 +101,7 @@ export class EstadoCocherasComponent{
   agregarFila(){
     this.cochera.agregarFila(this.datosEstadoCocheras)
     .then(()=>{
-      this.ngOnInit()})
+      this.getCocheras()})
     .then((filas) =>{
         filas = filas;
       })
@@ -142,15 +142,15 @@ export class EstadoCocherasComponent{
         confirmButtonText: "Cerrar cochera"
       }).then(res => {
         if(res.isConfirmed){
-          this.estacionamientos.desocuparCochera(valor).then(() =>{ 
-            this.ngOnInit();
-            let precio = this.estacionamientos.getCosto(cocheraId)
-        }).then((precio) =>{
-        Swal.fire({
-          title: "Cochera cerrada",
-          text: `Total a cobrar = ${precio}`,
-          icon: "success"
-      });
+          this.estacionamientos.desocuparCochera(valor).then((res) =>{
+            res.json().then((resJson)=>{
+              this.getCocheras();
+              Swal.fire({
+                title: "Cochera cerrada",
+                text: `Total a cobrar = $${resJson.costo}`,
+                icon: "success"
+          });
+            }) 
     }).catch(error => {
       console.log("Error al desocupar la cochera:", error);
     });
