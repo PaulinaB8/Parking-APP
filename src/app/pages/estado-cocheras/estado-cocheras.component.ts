@@ -82,7 +82,7 @@ export class EstadoCocherasComponent{
    }
   
 
-  cambiarDisponibilidadCochera(cocheraId:number, habilitada: boolean){
+  cambiarDisponibilidadCochera(cocheraId:number){
   //   /**cambia la disponibilidad de una cochera, si está disponible la deshabilita y viceversa */
     const cochera = this.filas.find(cochera => cochera.id === cocheraId)!;
    if(cochera.deshabilitada)

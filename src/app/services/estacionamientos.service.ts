@@ -86,14 +86,14 @@ export class EstacionamientosService {
         for (let estacionamiento of estacionamientos) {
 
           if (estacionamiento.horaEgreso !== null){
-            let mes = new Date(estacionamiento.horaEgreso);
-            let fecha = mes.toLocaleDateString("es-Cl", {
+            let fecha = new Date(estacionamiento.horaEgreso);
+            let mes = fecha.toLocaleDateString("es-Cl", {
             month: "numeric",
             year: "numeric",
           })
-          const indiceEncontrado = historial.findIndex((buscado) => buscado.periodo === fecha);
+          const indiceEncontrado = historial.findIndex((buscado) => buscado.periodo === mes);
           if(indiceEncontrado === -1){
-            historial.push({periodo:fecha, usos: 1, cobrado:estacionamiento.costo})
+            historial.push({periodo:mes, usos: 1, cobrado:estacionamiento.costo})
           } else {
             historial[indiceEncontrado].usos++;
             historial[indiceEncontrado].cobrado+= estacionamiento.costo;

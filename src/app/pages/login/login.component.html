@@ -1,18 +1,15 @@
 <main>
-    <div id="titulo">
-        <img src="https://static.vecteezy.com/system/resources/previews/005/619/349/original/smart-parking-gradient-linear-icon-location-on-gps-mobile-application-internet-of-things-smart-gadget-thin-line-color-symbol-modern-style-pictogram-isolated-outline-drawing-vector.jpg" alt="Imagen Parking">
-        <h1>PARKING APP</h1>
-    </div>
+    
     <div id="fondo">
-        <form id="iniciar-sesion">
-            <h2>BIENVENIDO</h2>
-            <p>Por favor, ingrese su usuario</p>
-            <input type="text" [(ngModel)]="datosLogin.username" placeholder="Usuario" name="usuario">
-
-            <input type="password" [(ngModel)]="datosLogin.password" placeholder="Contraseña" name="password">
+        <form id="credenciales">
+            <h2>Bienvenido a </h2>
+            <h1>PARKING APP</h1>
+            <p>Por favor, ingrese sus credenciales</p>
+            <input type="text" [(ngModel)]="datosLogin.username" placeholder="Usuario" name="usuario" id="usuario">
+            <input type="password" [(ngModel)]="datosLogin.password" placeholder ="Contraseña" name="password" id="contraseña">
 
             <button type="button" id="iniciar-sesion" (click)="login()">Iniciar Sesión</button>
-            <a id="olvidaste">¿Olvidaste tu contraseña?</a>
+            <p>></p>
         </form>
     </div>
 </main>

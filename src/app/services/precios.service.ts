@@ -48,48 +48,4 @@ export class PreciosService {
       .catch(() => false);
   }  
   }
-  //   if(id ===0)
-  //     return fetch(`https://localhost:4000/tarifas/MEDIAHORA`,{
-  //       method:"PUT",
-  //       headers:{
-  //         "Content-Type" : "application/json",
-  //         'Authorization' : `Bearer ${this.auth.getToken()}`,
-  //       },
-  //       body: JSON.stringify({"valor": nuevaTarifa}),
-  //     }).then(res=>{ 
-  //       if (res){
-  //         return true
-  //       }else{
-  //         return false
-  //       }
-  //     })
-  //   else if(id ===1)
-  //       return fetch(`https://localhost:4000/tarifas/PRIMERAHORA`,{
-  //         method:"PUT",
-  //         headers:{
-  //           "Content-Type" : "application/json",
-  //           'Authorization' : `Bearer ${this.auth.getToken()}`,
-  //         },
-  //         body: JSON.stringify({"valor": nuevaTarifa}),
-  //       }).then(res=>{ 
-  //         if (res)
-  //           return true
-  //         else
-  //           return false
-  //         })
-  //     else(id ===2)
-  //           return fetch(`https://localhost:4000/tarifas/VALORHORA`,{
-  //             method:"PUT",
-  //             headers:{
-  //               "Content-Type" : "application/json",
-  //               'Authorization' : `Bearer ${this.auth.getToken()}`,
-  //             },
-  //             body: JSON.stringify({"valor": nuevaTarifa}),
-  //           }).then(res=>{ 
-  //             if (res)
-  //               return true
-  //             else
-  //               return false
-  //             })
-  // }
-
+  

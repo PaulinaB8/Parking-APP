@@ -47,7 +47,9 @@ export class PreciosComponent {
         let valorIngresado = result.value;
         this.cambiarPrecios(valorIngresado, precioCambiar);
       }
-    });
+    }).then(()=>{
+      this.getPrecios();
+    })
   }
 
   precio = inject(PreciosService)

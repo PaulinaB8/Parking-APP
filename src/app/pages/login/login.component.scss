@@ -1,82 +1,89 @@
+@use "./../../../../public/styles/colores.scss";
+@use "./../../../../public/styles/fuentes.scss";
 main{
     display: flex;
     flex-direction:row;
-    #titulo{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 600px;
-        margin-left: 80px;
-    h1{
-        color: rgb(28, 136, 168);
-        font-size:10ch;
-        width: 600px;
-        height:400px;
-        padding-top:0px;
-        padding-left:20px;
-    }
-    img{
-        padding-top:10px;
-        padding-left:40px;
-        width: 500px;
-        padding-left: 50px;
-    }
+    background-image: url('../../../../public/imagenes/fondo-cocheras.png');
+    background-size: cover;
+    min-height: 100%;
+    
 }
+    h1{
+        color: colores.$color-borde-login;
+        font-size:60px;
+        padding-top:10px;
+    }
+
+::placeholder{
+    color:colores.$color-letra-login;
+    font-family: fuentes.$fuente-login;
+}
+
     #fondo{
         width: 700px;
         height: 700px;
         margin-left: 0px;
-        #iniciar-sesion{
+        margin-right: 800px;
+    }
+        #credenciales{
             display:flex;
             flex-direction: column;
             align-items: center;
-            width: 350px;
-            height:400px;
-            margin-top: 160px;
-            margin-left: 200px;
+            width: 400px;
+            height:450px;
+            margin-left: 150px;
             box-shadow: 0px 0px 3px 3px rgb(194, 189, 189);
             border-radius: 10px;
             text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: fuentes.$fuente-login;
+            background-color: colores.$color-login;
+            margin-top: 100px;
+        }
             h2{
-                padding-top: 45px;
-                font-size: 35px;
-                color:rgb(28, 136, 168);
+                padding-top: 30px;
+                font-size: 30px;
+                color:colores.$color-letra-login;
             }
             p{
                 padding-top: 40px;
-                color:grey;
+                color:colores.$color-letra-login;
+                font-family: fuentes.$fuente-login;
             }
             input{
                 width:300px;
-                margin-top: 30px;
-                color: grey;
-                border-bottom: 1px rgb(13, 13, 82) solid;
+                color: colores.$color-letra-login;
+                border-bottom: 1px colores.$color-borde-login solid;
+                padding-top: 30px;
+                cursor:pointer;
             }
-            #iniciar-sesion{
-                padding: 10px;
-                background-color: rgb(28, 136, 168);
-                box-shadow: none;
-                width: 250px;
-                margin-top: 30px;
-                border-radius: 10px;
-                color: white;
-                text-decoration: none;
-                height: 40px;
-                margin-left:0px;
-            }
+             #iniciar-sesion{
+                 padding: 10px;
+                 background-color: colores.$color-borde-login;
+                 box-shadow: none;
+                 width: 250px;
+                 margin-top: 30px;
+                 border-radius: 10px;
+                 color: colores.$color-texto-invertido;
+                 text-decoration: none;
+                 height: 40px;
+                 margin-left:0px;
+                 margin-bottom: 100px;
+                 font-size: 20px;
+             }
             #iniciar-sesion:hover{
-                background-color: rgb(190, 214, 221);
+                background-color: colores.$color-acceso;
+                cursor: pointer;
             }
-            #olvidaste{
-                color: rgb(28, 136, 168);
-                cursor: pointer; 
-                padding-top: 20px;         
+            input::marker{
+                background-color: colores.$color-login;
             }
-            #olvidaste:hover{
-                text-decoration: solid;
-                transition-duration: 0,2s;
+            .swal2-container.swal2-center>.swal2-popup{
+                background-color: #121212 !important;
+              }
+              .swal2-html-container, .swal2-title{
+                color: white !important;
+              }
+            .swal2-title{
+                color: colores.$color-login;
             }
-    }
-    }
-}
+    
