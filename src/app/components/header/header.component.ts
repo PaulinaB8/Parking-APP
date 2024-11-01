@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
   esAdmin: boolean =true;
 
   auth = inject(AuthService);

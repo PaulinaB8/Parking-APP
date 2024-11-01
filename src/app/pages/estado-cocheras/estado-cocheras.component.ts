@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component,  inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Cochera } from '../../interfaces/cochera';
 import { CommonModule } from '@angular/common';
@@ -20,6 +20,7 @@ import { PreciosComponent } from '../precios/precios.component';
   styleUrl: './estado-cocheras.component.scss'
 })
 export class EstadoCocherasComponent{
+
   filas: (Cochera & {activo: Estacionamiento|null})[] = [];
 
   cocheras = inject(CocherasServiceService)
@@ -158,6 +159,7 @@ export class EstadoCocherasComponent{
 })
     }
   
+
   }
 
           

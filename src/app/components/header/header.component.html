@@ -1,9 +1,17 @@
 <header>
-    @if(esAdmin){
-        <a [routerLink]="['/reportes']" routerLinkActive="active">Reportes</a>
-        <a [routerLink]="['/precios']" routerLinkActive="active">Precios</a>
-    }
-    <a [routerLink]="['/estado-cocheras']" routerLinkActive="active">Estado cocheras</a>
-    <a [routerLink]="['/login']" (click)="logOut()"><img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Logout"></a>
-</header>
+    <img src="https://i.pinimg.com/564x/3f/0f/72/3f0f722e204e2c7eaabbc5e68b9f264d.jpg" alt="Parking APP" id="parking">
+    <p id="titulo"> Parking APP</p>
+    <nav>
+        <ul>
+        <li><a [routerLink]="['/estado-cocheras']" routerLinkActive="active">Estado cocheras</a></li>
+        @if(esAdmin){
+            <li><a [routerLink]="['/reportes']" routerLinkActive="active">Reportes</a></li>
+            <li><a [routerLink]="['/precios']" routerLinkActive="active">Precios</a></li>
+        }
+        <a [routerLink]="['/login']" (click)="logOut()"><img src="https://i.pinimg.com/564x/33/4e/f7/334ef78a2fdcb03e64dc4f17253d9e24.jpg" alt="Logout"></a>
+        </ul>
+    </nav>
+    </header>
 <!-- routerLinkActive me conecta con SCSS y hace que cuando yo estoy en la página lo pone azul -->
+
+<!-- https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.pnghttps://i.pinimg.com/564x/3f/0f/72/3f0f722e204e2c7eaabbc5e68b9f264d.jpg -->

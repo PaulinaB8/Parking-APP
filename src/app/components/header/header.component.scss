@@ -1,27 +1,52 @@
 @use "./../../../../public/styles/colores.scss";
 header{
-    border-bottom: rgb(11, 11, 105) 10px solid;
-    height: 100px;
+    box-shadow: 0px 0px 4px 4px rgb(211, 209, 209);
+    height: 130px;
     display:flex;
     justify-content: space-between;
-    h1{
-        color: colores.$color-principal;
-        font-size: 55px;
-        margin-left: 10px;
-        margin-top: 10px;
-    }
     a{
         text-decoration: none;
         font-size: 20px;
-        margin-top: 30px;
 
     }
     .active{
-        color: blue;
+         color: colores.$color-texto-invertido;
+         padding: 8px;
+         background-color: colores.$color-borde-login;
+         border-radius: 20px;
     }
-    img{
-        width: 80px;
-        padding-right:10px;
+    a, p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+        text-decoration: none;
+        list-style: none;
+        img{
+            width: 65px;
+            margin-right:20px;
+            margin-top: 45px;
+        }
+    }
+
+    li{
+        margin-top: 60px;
+    }
+    #parking{
+        width: 120px;
+        height: 120px;
+        margin-left: 30px;
+        margin-top: 10px;
+        margin-right:0px;
+    }
+    #titulo{
+        font-size: 50px;
+        color:colores.$color-letra-header;
+        margin-right: 405px;
+        margin-top: 35px;
     }
 
 }

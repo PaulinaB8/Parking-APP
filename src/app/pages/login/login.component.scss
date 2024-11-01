@@ -77,13 +77,5 @@ main{
             input::marker{
                 background-color: colores.$color-login;
             }
-            .swal2-container.swal2-center>.swal2-popup{
-                background-color: #121212 !important;
-              }
-              .swal2-html-container, .swal2-title{
-                color: white !important;
-              }
-            .swal2-title{
-                color: colores.$color-login;
-            }
+           
     
