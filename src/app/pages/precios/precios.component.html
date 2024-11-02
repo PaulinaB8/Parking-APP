@@ -2,14 +2,14 @@
 <main>
     <div id="table">
         <div id="titulo">
-            <div class="titulos" id="tiempo"><p>TIEMPO</p></div>
-            <div class="titulos" id="costo"><p>COSTO</p></div>
-            <div class="titulos" id="acciones"><p>ACCIONES</p></div>
+            <div class="titulos" id="tiempo"><p>Tiempo</p></div>
+            <div class="titulos" id="costo"><p>Costo</p></div>
+            <div class="titulos" id="acciones"><p>Acciones</p></div>
         </div>
         @for (fila of filas; track $index){
             <div class="contenido-tabla">
-                <div class="contenido">{{fila.id}}</div>
-                <div class="contenido">{{fila.valor}}</div>
+                <div class="contenido" id="hora">{{fila.id}}</div>
+                <div class="contenido" id="valor">{{fila.valor}}</div>
                 <div class="contenido">
                     <button type="button" (click)="modalCambiarPrecios($index)"><img src="https://cdn-icons-png.flaticon.com/512/860/860814.png" alt="Editar"></button>
                     </div>

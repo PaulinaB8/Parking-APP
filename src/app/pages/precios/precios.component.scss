@@ -3,12 +3,12 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding-top: 80px;
+    padding: 30px;
     width: 700px;
-    background-color: colores.$color-principal;
+    background-color: colores.$color-header;
     border-radius: 50px;
     color:colores.$color-texto-invertido;
-    margin-left: 350px;
+    margin-left: 300px;
     margin-top: 130px;
 }
 
@@ -17,7 +17,8 @@
     justify-content: space-between;
     flex-direction: row;
     gap: 50px;
-    margin-left:0px
+    margin-left:0px;
+    border-bottom: colores.$color-texto;
 }
 
 .titulos{
@@ -49,7 +50,6 @@
     padding-left: 10px;
     font-size: 20px;
     color:colores.$color-texto;   
-    border-bottom: colores.$color-borde-inferior-precios;
 }
 
 .contenido{
@@ -61,6 +61,17 @@
     padding-right:20px;
 }
 
+#hora{
+    width: 150px;
+}
+
+#valor{
+    width: 50px;
+    text-align: center;
+    padding-left: 25px;
+}
+
 img{
     width: 35px;
+    padding-right: 60px;
 }
