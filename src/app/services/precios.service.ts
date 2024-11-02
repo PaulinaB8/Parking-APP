@@ -25,11 +25,11 @@ export class PreciosService {
     let url = '';
     
     if (id === 0) {
-        url = 'https://localhost:4000/tarifas/MEDIAHORA';
+        url = 'http://localhost:4000/tarifas/MEDIAHORA';
     } else if (id === 1) {
-        url = 'https://localhost:4000/tarifas/PRIMERAHORA';
+        url = 'http://localhost:4000/tarifas/PRIMERAHORA';
     } else if (id === 2) {
-        url = 'https://localhost:4000/tarifas/VALORHORA';
+        url = 'http://localhost:4000/tarifas/VALORHORA';
     } else {
         return Promise.reject(new Error('ID inválido'));
     }
