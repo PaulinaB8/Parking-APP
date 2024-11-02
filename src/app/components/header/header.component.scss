@@ -4,7 +4,16 @@ header{
     height: 130px;
     display:flex;
     justify-content: space-between;
+    background-color: colores.$color-fondo;
+    margin-top:0px;
+    padding-top: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
+
 a{
     text-decoration: none;
     font-size: 20px;
