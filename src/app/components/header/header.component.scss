@@ -1,6 +1,6 @@
 @use "./../../../../public/styles/colores.scss";
 header{
-    box-shadow: 0px 0px 4px 4px rgb(211, 209, 209);
+    box-shadow: 0px 0px 4px 4px colores.$color-box-shadow;
     height: 130px;
     display:flex;
     justify-content: space-between;

@@ -9,16 +9,23 @@
             <div class = "titulo">Acciones</div>
         </div>
         @for (fila of filas; track $index) {
-            <button class = "fila" (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada||fila.activo">
-                <div class="contenido">{{ $index +1 }}</div>
+            <div id="fila">
+            <button class = "boton-ocupar" (click)="abrirModalNuevoEstacionamiento(fila.id)" [disabled]="fila.deshabilitada||fila.activo">
+                <div class="contenido" id="indice">{{ $index +1 }}</div>
                 @if (fila.activo) {
-                    <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente, fila.id)">{{ fila.activo.patente }}</button>
+                    <button type="button" class="patente" (click)="desocuparCochera(fila.activo.patente, fila.id)" >{{ fila.activo.patente }}</button>
                 } @else if (fila.deshabilitada) {
                     <button type="button" class="contenido"><span class="ocupado">No disponible</span></button>
                 } @else {
                     <div class="contenido"><span class="disponible">Disponible</span></div>
                 }
-                <div class="contenido">{{ fila.activo?.horaIngreso }}</div>
+                @if(fila.activo?.horaIngreso){
+                    <div class="contenido" class="hora-ingreso">{{ fila.activo?.horaIngreso }}</div>
+                }@else{
+                    <div class="ingreso"></div>
+                }
+            
+            </button>
             
                 <div class="boton" class="contenido">
                     @if (!fila.activo){
@@ -27,9 +34,10 @@
                         <img *ngIf="fila.deshabilitada" src="https://cdn-icons-png.flaticon.com/512/157/157977.png" alt="Ocupado">
                       </button>
                     }
-                </div>
-            </button>
+            </div>           
+            </div>
         }
+    
     </div>
         <button id="boton-agregar" (click)="agregarFila()">+</button>
 </main>

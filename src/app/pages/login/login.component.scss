@@ -10,8 +10,18 @@ main{
 }
     h1{
         color: colores.$color-borde-login;
-        font-size:60px;
-        padding-top:10px;
+        font-size:80px;
+        padding-top:5px;
+        font-weight:bold;
+        margin-bottom:0px;
+        padding-bottom:0px;
+        height: 90px;
+    }
+    h2{
+        color: colores.$color-borde-login;
+        font-size:50px;
+        margin-top:0px;
+        padding-top:0px;
     }
 
 ::placeholder{
@@ -39,13 +49,14 @@ main{
             background-color: colores.$color-login;
             margin-top: 100px;
         }
-            h2{
-                padding-top: 30px;
+            h3{
+                padding-top: 20px;
                 font-size: 30px;
                 color:colores.$color-letra-login;
+                margin-bottom: 0px;
             }
             p{
-                padding-top: 40px;
+                padding-top: 10px;
                 color:colores.$color-letra-login;
                 font-family: fuentes.$fuente-login;
             }

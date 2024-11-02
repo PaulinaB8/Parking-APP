@@ -1,114 +1,152 @@
 @use "./../../../../public/styles/colores.scss";
+@use"./../../../../public/styles/fuentes.scss";
 
 main{
     background-color: colores.$color-fondo;
-    align-items: center;
-    #table{
-        margin-top: 50px;
-        margin-left: 150px;
-        // border-collapse: separate;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 1000px;
-        #thead{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 30px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            border-bottom:  colores.$color-boton-secundario 3px solid;
-        }
-            #num{
-                padding-right: 20px;
-            }
-        
-            .fila{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-direction: row;
-                padding-top: 10px;
-                padding-bottom:10px;
-                padding-left: 10px;
-                font-size: 20px;
-                color:colores.$color-texto;   
-                border-bottom: colores.$color-borde-inferior;
-            }
-            .contenido{
-                display: flex;
-                text-align: center;
-                padding-top: 5px;
-                align-items: center;
-                padding-bottom: 5px;
-            }
-            .boton{
-                padding: 10px;
-                img{
-                    width:30px;
-                    cursor:pointer
-                }
-            }
-            img{
-                width: 30px;
-                cursor: pointer;
-            }
-            #descripcion{
-                width: 150px;
-                text-align: center;
-            }
+    align-items: center;}
 
-    }
-    .disponible{
-        background-color: colores.$color-correcto;
+#table{
+    margin-top: 50px;
+    margin-left: 150px;
+    // border-collapse: separate;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 1000px;
+    box-shadow: 0px 0px 3px 3px colores.$color-box-shadow;
+    padding:30px;
+    border-radius: 10px;
+}
+#thead{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 30px 10px 30px;
+    background-color: colores.$color-letra-header;
+    border-radius: 20px;
+    color:colores.$color-texto-invertido;
+    font-family:fuentes.$fuente-login;
+    
+}
+#num{
+    padding-right: 20px;
+}
+#fila{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: colores.$color-borde-inferior;
+    margin-left:20px;
+    margin-right: 30px;
+    align-items: center;
+}
+        
+.boton-ocupar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 10px;
+    // padding-bottom:10px;
+    // padding-left: 10px;
+    font-size: 20px;
+    color:colores.$color-texto;   
+}
+
+            
+.contenido{
+    display: flex;
+    text-align: center;
+    padding-top: 5px;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+img{
+    width: 30px;
+    cursor: pointer;
+}
+
+#indice{
+    width: 40px;
+    display:flex;
+    align-items: center;
+}
+
+    
+.disponible{
+    background-color: colores.$color-correcto;
+    border-radius: 20px;
+    text-align: center;
+    color:white;
+    padding:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    
+}
+
+.disponible:hover{
+    cursor:pointer;
+    background-color: colores.$color-box-shadow;
+}
+.ocupado{
+        background-color: colores.$color-boton-secundario;
         border-radius: 20px;
         text-align: center;
         color:white;
-        margin-top: 30px;
-        padding:10px;
-        padding-left: 32px;
-        padding-right: 32px;
-        font-size: 20px;
-        align-items: center;
+        margin-top:10px;
         margin-bottom: 10px;
-        margin-top: 10px;
-        
-    }
-    .ocupado{
-            background-color: colores.$color-boton-secundario;
-            border-radius: 20px;
-            text-align: center;
-            color:white;
-            padding:10px;
-            padding-left: 20px;
-            padding-right: 20px;
-            font-size: 20px;
-            margin:0px;
-    }
-    
-    };
-    #boton-agregar{
-    padding:10px;
-    background-color: colores.$color-principal;
-    border-radius: 15px;
-    color:white;
-    margin-top: 40px;
-    cursor:pointer;
-    margin-left: 650px;
-    font-size: 25px;
-}
-    #boton-get{
-    cursor:pointer;
-    padding: 10px;
-    background-color: colores.$color-principal;
-    color: white;
-    border-radius: 10px;
-    margin-left: 600px;
-}
-    .patente{
+        padding-bottom:5px;
+        padding-top:5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
         font-size: 20px;
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 50px;
-    }
+        margin-left: 190px;
+        margin-right:0px;
+}
+
+
+.patente{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    margin-left: 200px;
+}
+
+.ingreso{
+    // margin-left: 200px;
+    margin-left: 80px;
+    width: 370px;
+}
+
+.hora-ingreso{
+    cursor: none;
+    margin-left: 80px;
+    width: 370px;
+}
+    
+
+#boton-agregar{
+padding:15px 20px 15px 20px;
+background-color: colores.$color-principal;
+border-radius: 30px;
+color:white;
+margin-top: 40px;
+cursor:pointer;
+margin-left: 650px;
+font-size: 25px;
+margin-bottom: 50px;
+}
+
+    
