@@ -18,10 +18,38 @@ export class ReporteComponent implements OnInit {
   reportes : UsoMes [] = [];
 
   ngOnInit(){
-     this.estacionamientos.getUsoMensual().then(res =>{
+     this.getUsoMensual().then(res =>{
       this.reportes = res; 
      })
   }
 
+  getUsoMensual(){
+    return this.estacionamientos.estacionamientos().then(estacionamientos => {
+      let historial: UsoMes[] = []
+        for (let estacionamiento of estacionamientos) {
 
-}
+          if (estacionamiento.horaEgreso !== null){
+            let fecha = new Date(estacionamiento.horaEgreso);
+            let mes = fecha.toLocaleDateString("es-Cl", {
+            month: "numeric",
+            year: "numeric",
+          })
+          const indiceEncontrado = historial.findIndex((buscado) => buscado.periodo === mes);
+          let costoRedondeado: number = Math.round(estacionamiento.costo)
+          if(indiceEncontrado === -1){
+            historial.push({periodo:mes, usos: 1, cobrado:costoRedondeado})
+          } else {
+            historial[indiceEncontrado].usos++;
+            historial[indiceEncontrado].cobrado+= costoRedondeado;
+          }
+          
+          
+        }
+      }
+      return historial
+      }
+      )}
+  }
+
+
+

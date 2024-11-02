@@ -8,7 +8,6 @@ main{
 #table{
     margin-top: 50px;
     margin-left: 150px;
-    // border-collapse: separate;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -48,8 +47,6 @@ main{
     align-items: center;
     flex-direction: row;
     padding-top: 10px;
-    // padding-bottom:10px;
-    // padding-left: 10px;
     font-size: 20px;
     color:colores.$color-texto;   
 }
@@ -118,6 +115,7 @@ img{
 .patente{
     font-size: 20px;
     text-align: center;
+    display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 50px;
@@ -125,7 +123,6 @@ img{
 }
 
 .ingreso{
-    // margin-left: 200px;
     margin-left: 80px;
     width: 370px;
 }

@@ -3,16 +3,16 @@
     
     <div id="table">
         <div id="thead">
-            <div id="num" class = "titulo">N°</div>
-            <div id="mes" class = "titulo">Mes</div>
-            <div class = "titulo" id="usos">Usos</div>
-            <div class = "titulo">Cobrado</div>
+            <div id="num" class = "titulo" id="num">N°</div>
+            <div  class = "titulo" id="periodo">Mes</div>
+            <div class = "titulo" id="cantidad">Usos</div>
+            <div class = "titulo" id="total">Cobrado</div>
         </div>
         @for (reporte of reportes; track $index){
             <div class="contenido-tabla">
-                <div class="contenido">{{$index}}</div>
-                <div class="contenido">{{reporte.periodo}}</div>
-                <div class="contenido">{{reporte.usos}}</div>
-                <div class="contenido">{{reporte.cobrado}}</div>
+                <div class="contenido" id="indice">{{$index +1 }}</div>
+                <div class="contenido" id="mes">{{reporte.periodo}}</div>
+                <div class="contenido" id="usos">{{reporte.usos}}</div>
+                <div class="contenido" id="cobrado">{{reporte.cobrado.toLocaleString("es-ES")}}</div>
             </div>
         }

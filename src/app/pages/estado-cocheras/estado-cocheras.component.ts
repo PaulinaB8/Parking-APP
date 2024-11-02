@@ -146,9 +146,10 @@ export class EstadoCocherasComponent{
           this.estacionamientos.desocuparCochera(valor).then((res) =>{
             res.json().then((resJson)=>{
               this.getCocheras();
+              let costo = Math.trunc(resJson.costo).toLocaleString("es-ES");
               Swal.fire({
                 title: "Cochera cerrada",
-                text: `Total a cobrar = $${resJson.costo}`,
+                text: `Total a cobrar = $${costo}`,
                 icon: "success"
           });
             }) 

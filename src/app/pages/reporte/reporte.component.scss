@@ -1,68 +1,96 @@
 @use "./../../../../public/styles/colores.scss";
+@use "./../../../../public/styles/fuentes.scss";
 
 main{
     background-color: colores.$color-fondo;
     align-items: center;
-    #table{
-        margin-top: 50px;
-        margin-left: 150px;
-        // border-collapse: separate;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 1000px;
-        #thead{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 30px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            border-bottom:  colores.$color-boton-secundario 3px solid;
-        }
-            #num{
-                padding-right: 20px;
-            }
-        
-            #fila{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-direction: row;
-                padding-top: 10px;
-                padding-bottom:10px;
-                padding-left: 10px;
-                font-size: 20px;
-                color:colores.$color-texto;   
-                border-bottom: colores.$color-borde-inferior;
-            }
-            .contenido{
-                display: flex;
-                text-align: center;
-                padding-top: 5px;
-                flex-direction: row;
-                align-items: center;
-                padding-bottom: 5px;
-            }
-            .boton{
-                padding: 10px;
-                img{
-                    width:30px;
-                    cursor:pointer
-                }
-            }
-            img{
-                width: 30px;
-                cursor: pointer;
-            }
-            #descripcion{
-                width: 150px;
-                text-align: center;
-            }
-        }
+}
+#table{
+    margin-top: 50px;
+    margin-left: 150px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 1000px;
+    box-shadow: 0px 0px 3px 3px colores.$color-box-shadow;
+    padding:30px;
+    border-radius: 10px;
+}
+
+#thead{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 30px 10px 30px;
+    background-color: colores.$color-letra-header;
+    border-radius: 20px;
+    color:colores.$color-texto-invertido;
+    font-family:fuentes.$fuente-login;
+}
+
+#num{
+    padding-right: 40px;
+}
+
+#periodo{
+    padding-right: 70px;
+}
+
+#cantidad{
+    padding-right: 50px;
+}
+
+#total{
+    padding-right: 50px;
+}
+
+.contenido-tabla{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 10px;
+    font-size: 20px;
+    color:colores.$color-texto;   
+    border-top: colores.$color-borde-inferior;
+    margin-left:20px;
+    margin-right: 30px;
     }
-    .contenido-tabla{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
+
+#indice{
+    padding-left:10px; 
+}
+
+#mes{
+    width:400px;
+    padding-left: 200px;
+    padding-right: 0px;
+    display: flex;
+    text-align: center;
+}
+
+#usos{
+    text-align: center;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    font-size: 20px;
+}
+
+#cobrado{
+    text-align: center;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    margin-left: 190px;
+    margin-right:0px;
+    width:300px;
+
+}
+
     
