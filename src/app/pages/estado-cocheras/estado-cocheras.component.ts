@@ -28,6 +28,7 @@ export class EstadoCocherasComponent{
   auth= inject (AuthService);
   cochera = inject(CocherasServiceService);
   router = inject(Router);
+  precios = inject(PreciosService);
 
   ngOnInit(){
     this.getCocheras();
@@ -108,7 +109,7 @@ export class EstadoCocherasComponent{
       })
     }
 
-    // patenteNueva: string = "";
+    
     
    abrirModalNuevoEstacionamiento(id:number){
       Swal.fire({
@@ -131,7 +132,7 @@ export class EstadoCocherasComponent{
   }
     
   
-    precios = inject(PreciosService);
+
 
     desocuparCochera(valor: string, cocheraId:number){
       Swal.fire({

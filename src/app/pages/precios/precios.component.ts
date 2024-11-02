@@ -14,9 +14,12 @@ import Swal from 'sweetalert2';
   styleUrl: './precios.component.scss'
 })
 export class PreciosComponent {
+
+  precio = inject(PreciosService)
+
   filas : Precio[] = [];
 
-  precios = inject(PreciosService);
+  
 
   ngOnInit(){
     this.getPrecios();
@@ -24,7 +27,7 @@ export class PreciosComponent {
   }
 
   getPrecios(){
-    this.precios.getTarifas().then(precios=>{
+    this.precio.getTarifas().then(precios=>{
       this.filas = precios; 
 
   })}
@@ -52,7 +55,6 @@ export class PreciosComponent {
     })
   }
 
-  precio = inject(PreciosService)
 
   cambiarPrecios(precio: number, id: number){
     this.precio.cambiarTarifa(precio,id).then(data => {

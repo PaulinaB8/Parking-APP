@@ -14,13 +14,14 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
+  router = inject(Router);
+  auth = inject (AuthService);
+
   datosLogin: Login = {
-    // variable de tipo login 
     username: "",
     password: "",
   }
-  router = inject(Router);
-  auth = inject (AuthService);
 
   login(){
     // inicia sesion 

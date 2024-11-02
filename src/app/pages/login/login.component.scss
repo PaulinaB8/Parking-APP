@@ -8,85 +8,90 @@ main{
     min-height: 100%;
     
 }
-    h1{
-        color: colores.$color-borde-login;
-        font-size:80px;
-        padding-top:5px;
-        font-weight:bold;
-        margin-bottom:0px;
-        padding-bottom:0px;
-        height: 90px;
-    }
-    h2{
-        color: colores.$color-borde-login;
-        font-size:50px;
-        margin-top:0px;
-        padding-top:0px;
-    }
+
+h1{
+    color: colores.$color-borde-login;
+    font-size:80px;
+    padding-top:5px;
+    font-weight:bold;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    height: 90px;
+}
+
+h2{
+    color: colores.$color-borde-login;
+    font-size:50px;
+    margin-top:0px;
+    padding-top:0px;
+}
 
 ::placeholder{
     color:colores.$color-letra-login;
     font-family: fuentes.$fuente-login;
 }
 
-    #fondo{
-        width: 700px;
-        height: 700px;
-        margin-left: 0px;
-        margin-right: 800px;
-    }
-        #credenciales{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            width: 400px;
-            height:450px;
-            margin-left: 150px;
-            box-shadow: 0px 0px 3px 3px rgb(194, 189, 189);
-            border-radius: 10px;
-            text-align: center;
-            font-family: fuentes.$fuente-login;
-            background-color: colores.$color-login;
-            margin-top: 100px;
-        }
-            h3{
-                padding-top: 20px;
-                font-size: 30px;
-                color:colores.$color-letra-login;
-                margin-bottom: 0px;
-            }
-            p{
-                padding-top: 10px;
-                color:colores.$color-letra-login;
-                font-family: fuentes.$fuente-login;
-            }
-            input{
-                width:300px;
-                color: colores.$color-letra-login;
-                border-bottom: 1px colores.$color-borde-login solid;
-                padding-top: 30px;
-                cursor:pointer;
-            }
-             #iniciar-sesion{
-                 padding: 10px;
-                 background-color: colores.$color-borde-login;
-                 box-shadow: none;
-                 width: 250px;
-                 margin-top: 30px;
-                 border-radius: 10px;
-                 color: colores.$color-texto-invertido;
-                 text-decoration: none;
-                 height: 40px;
-                 margin-left:0px;
-                 margin-bottom: 100px;
-                 font-size: 20px;
-             }
-            #iniciar-sesion:hover{
-                background-color: colores.$color-acceso;
-                cursor: pointer;
-            }
-            input::marker{
-                background-color: colores.$color-login;
-            }
+#fondo{
+width: 700px;
+height: 700px;
+margin-left: 0px;
+margin-right: 800px;
+}
+
+#credenciales{
+display:flex;
+flex-direction: column;
+align-items: center;
+width: 400px;
+height:450px;
+margin-left: 150px;
+box-shadow: 0px 0px 3px 3px rgb(194, 189, 189);
+border-radius: 10px;
+text-align: center;
+font-family: fuentes.$fuente-login;
+background-color: colores.$color-login;
+margin-top: 100px;
+}
+
+h3{
+    padding-top: 20px;
+    font-size: 30px;
+    color:colores.$color-letra-login;
+    margin-bottom: 0px;
+}
+
+p{
+    padding-top: 10px;
+    color:colores.$color-letra-login;
+    font-family: fuentes.$fuente-login;
+}
+input{
+    width:300px;
+    color: colores.$color-letra-login;
+    border-bottom: 1px colores.$color-borde-login solid;
+    padding-top: 30px;
+    cursor:pointer;
+}
+#iniciar-sesion{
+    padding: 10px;
+    background-color: colores.$color-borde-login;
+    box-shadow: none;
+    width: 250px;
+    margin-top: 30px;
+    border-radius: 10px;
+    color: colores.$color-texto-invertido;
+    text-decoration: none;
+    height: 40px;
+    margin-left:0px;
+    margin-bottom: 100px;
+    font-size: 20px;
+}
+#iniciar-sesion:hover{
+    background-color: colores.$color-acceso;
+    cursor: pointer;
+}
+input::marker{
+    background-color: colores.$color-login;
+}
            
     

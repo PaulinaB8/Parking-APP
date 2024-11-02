@@ -37,7 +37,7 @@ export class PreciosService {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${this.auth.getToken()}`, // reemplaza con el token adecuado
+              'Authorization': `Bearer ${this.auth.getToken()}`, 
           },
           body: JSON.stringify({ 
             valor: nuevaTarifa,
